@@ -1,45 +1,45 @@
 # 🌀 Arcane Quote Generator
 
-Ce projet est un générateur de citations aléatoires inspiré de la série **Arcane**. Il sélectionne dynamiquement une citation et l'affiche dans le navigateur avec un style visuel personnalisé pour chaque personnage.
+This project is a random quote generator inspired by the **Arcane** series. It dynamically selects and displays a quote in the browser, with a custom visual style tailored to each character.
 
-## 🚀 Fonctionnalités
+## 🚀 Features
 
-- Affichage aléatoire de citations tirées de l'univers **Arcane**
-- Utilisation d'un tableau d'objets contenant des métadonnées comme la source, l'année, la voix ou le nombre d'épisodes
-- Rafraîchissement automatique de la citation toutes les 15 secondes
-- Changement de fond en fonction du personnage cité
-- Bouton pour générer manuellement une nouvelle citation
+- Randomly displays quotes from the **Arcane** universe
+- Uses an array of objects containing metadata like source, year, voice actor, and number of episodes
+- Automatically refreshes with a new quote every 15 seconds
+- Background changes based on the quoted character
+- Button available to manually generate a new quote
 
-## 🧠 Structure du projet
+## 🧠 Project Structure
 
 ### 1. `quotes[]`
 
-Un tableau d’objets contenant :
+An array of quote objects, each including:
 
-- `quote`: le texte de la citation
-- `source`: le personnage
-- `citation`: l’œuvre ou la saison (optionnel)
-- `year`: l'année (optionnel)
-- `voice`: l’acteur/actrice de voix (optionnel)
-- `episodes`: nombre d’épisodes dans lesquels le personnage apparaît (optionnel)
+- `quote`: the quote text
+- `source`: the character who said it
+- `citation`: the season or work it comes from (optional)
+- `year`: the year it originated (optional)
+- `voice`: the voice actor (optional)
+- `episodes`: total number of episodes the character appears in (optional)
 
 ### 2. `getRandomQuote()`
 
-Retourne un objet aléatoire depuis le tableau `quotes`.
+Returns a random quote object from the `quotes` array.
 
 ### 3. `printQuote()`
 
-- Appelle `getRandomQuote()`
-- Génère dynamiquement une chaîne HTML avec les infos pertinentes (citation, source, etc.)
-- Met à jour le contenu du `<div id="quote-box">`
-- Change aussi le **background** via `colorQuote()` selon le personnage cité
+- Calls `getRandomQuote()`
+- Dynamically builds an HTML string with the quote's details
+- Injects the content into the `<div id="quote-box">`
+- Also calls `colorQuote()` to change the background based on the character
 
 ### 4. `colorQuote()`
 
-Au lieu d’un code couleur généré aléatoirement, j’ai pris la liberté d’associer un **dégradé représentatif à chaque personnage**. Cela renforce visuellement l’identité de chaque figure de l’univers **Arcane**.
+Instead of generating a random color, I took the liberty of assigning a **custom gradient to each character**. This visually reinforces the unique personality of each Arcane figure.
 
-### 5. Rafraîchissement automatique
+### 5. Auto-refresh
 
-Un `setInterval()` appelle `printQuote()` toutes les **15 secondes**, pour garder l’interface vivante.
+A `setInterval()` function calls `printQuote()` every **15 seconds** to keep the interface dynamic and fresh.
 
 ---
