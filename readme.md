@@ -1,4 +1,4 @@
-# 🌀 Arcane Quote Generator
+# 🌀 Arcane Quotes Generator
 
 This project is a random quote generator inspired by the **Arcane** series. It dynamically selects and displays a quote in the browser, with a custom visual style tailored to each character.
 
