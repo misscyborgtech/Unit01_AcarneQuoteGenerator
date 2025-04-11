@@ -16,6 +16,7 @@ let quotes = [
     source: "Viktor",
     citation: "Arcane Season 1",
     episodes: 14,
+    image: "./img/viktor.png",
   },
 
   {
@@ -23,6 +24,7 @@ let quotes = [
     source: "Ekko",
     citation: "Arcane Season 2",
     year: 2024,
+    image: "./img/ekko.png",
   },
 
   {
@@ -30,6 +32,7 @@ let quotes = [
       "I never would have given you to them. Not for anything. Don’t cry. You’re perfect.",
     source: "Silco",
     citation: "Arcane Season 1",
+    image: "./img/silco.png",
   },
 
   {
@@ -39,6 +42,7 @@ let quotes = [
     year: 2024,
     voice: "Ella Purnell",
     episodes: 15,
+    image: "./img/jinx.png",
   },
 
   {
@@ -46,6 +50,7 @@ let quotes = [
     source: "Sevika",
     citation: "Arcane Season 2",
     year: 2024,
+    image: "./img/sevika.png",
   },
 
   {
@@ -53,6 +58,7 @@ let quotes = [
     source: "Heimerdinger",
     citation: "Arcane Season 1",
     voice: "Mick Wingert",
+    image: "./img/heimerdinger.png",
   },
 
   {
@@ -61,6 +67,7 @@ let quotes = [
     citation: "Arcane Season 1",
     voice: "Hailee Steinfield",
     episodes: 16,
+    image: "./img/vi.png",
   },
 
   {
@@ -70,6 +77,7 @@ let quotes = [
     year: 2024,
     voice: "Kevin Alejandro",
     episodes: 17,
+    image: "./img/jayce.png",
   },
 
   {
@@ -77,6 +85,7 @@ let quotes = [
       "You’ve got a good heart. Don’t ever lose it. No matter how the world tries to break you. Protect the family.",
     source: "Vander",
     citation: "Arcane Season 1",
+    image: "./img/vander.png",
   },
 
   {
@@ -84,6 +93,7 @@ let quotes = [
     source: "Mel",
     citation: "Arcane Season 1",
     episodes: 14,
+    image: "./img/mel.png",
   },
 ];
 
@@ -136,7 +146,20 @@ function printQuote() {
 
   colorQuote();
 
-  let html = `<p class="quote">${randomQuote.quote}</p> <p class="source"><strong>${randomQuote.source}, </strong>${randomQuote.citation}<span></span>`;
+  let html = `
+  <div class="quote-layout">
+    <div class="quote-top">
+      <img src="${randomQuote.image}" alt="${
+    randomQuote.source
+  }" class="character-img">
+      <p class="quote">${randomQuote.quote}</p>
+    </div>
+    <div class="quote-bottom">
+      <p class="source">
+        <strong>${randomQuote.source}</strong>${
+    randomQuote.citation ? ", " + randomQuote.citation : ""
+  }`;
+
   if (randomQuote.year) {
     html += `<span class="year">${randomQuote.year}</span>`;
   }
@@ -147,7 +170,7 @@ function printQuote() {
   if (randomQuote.episodes) {
     html += `<span> Seen in : ${randomQuote.episodes} episodes.</span>`;
   }
-  html += `</p>`;
+  html += `</p></div></div>`;
   document.getElementById("quote-box").innerHTML = html;
 }
 printQuote();
