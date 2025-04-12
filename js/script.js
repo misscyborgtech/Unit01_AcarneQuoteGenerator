@@ -15,6 +15,7 @@ let quotes = [
     quote: "There is always a choice.",
     source: "Viktor",
     citation: "Arcane Season 1",
+    year: 2021,
     episodes: 14,
     image: "./img/viktor.png",
   },
@@ -32,6 +33,7 @@ let quotes = [
       "I never would have given you to them. Not for anything. Don’t cry. You’re perfect.",
     source: "Silco",
     citation: "Arcane Season 1",
+    year: 2021,
     image: "./img/silco.png",
   },
 
@@ -57,6 +59,7 @@ let quotes = [
     quote: "No great science should ever put lives in danger.",
     source: "Heimerdinger",
     citation: "Arcane Season 1",
+    year: 2021,
     voice: "Mick Wingert",
     image: "./img/heimerdinger.png",
   },
@@ -65,6 +68,7 @@ let quotes = [
     quote: "It’s been real, Cupcake. Thanks. For everything.",
     source: "Vi",
     citation: "Arcane Season 1",
+    year: 2021,
     voice: "Hailee Steinfield",
     episodes: 16,
     image: "./img/vi.png",
@@ -85,6 +89,7 @@ let quotes = [
       "You’ve got a good heart. Don’t ever lose it. No matter how the world tries to break you. Protect the family.",
     source: "Vander",
     citation: "Arcane Season 1",
+    year: 2021,
     image: "./img/vander.png",
   },
 
@@ -92,6 +97,7 @@ let quotes = [
     quote: "Love and legacy are the sacrifices we make for progress.",
     source: "Mel",
     citation: "Arcane Season 1",
+    year: 2021,
     episodes: 14,
     image: "./img/mel.png",
   },
@@ -127,7 +133,7 @@ function printQuote() {
 
   function colorQuote() {
     let sourceColor = {
-      Jinx: "linear-gradient(to right, #00BFFF, #FF4DA6)",
+      Jinx: "linear-gradient(to right, #00BFFF, #FF4DA695)",
       Silco: "linear-gradient(to right, #8B0000, #0A0A0A)",
       Heimerdinger: "linear-gradient(to right, #FFD700, #87CEFA)",
       Jayce: "linear-gradient(to right, #4169E1, #DAA520)",
@@ -147,31 +153,30 @@ function printQuote() {
   colorQuote();
 
   let html = `
-  <div class="quote-layout">
-    <div class="quote-top">
-      <img src="${randomQuote.image}" alt="${
-    randomQuote.source
-  }" class="character-img">
-      <p class="quote">${randomQuote.quote}</p>
+  <div class="quote-wrapper fade-in">
+    <div class="quote-content">
+      <img src="${randomQuote.image}" alt="${randomQuote.source}" class="character-img">
+      <p class="quote">"${randomQuote.quote}"</p>
     </div>
-    <div class="quote-bottom">
+    <div class="quote-meta">
       <p class="source">
-        <strong>${randomQuote.source}</strong>${
-    randomQuote.citation ? ", " + randomQuote.citation : ""
-  }`;
+        <strong>${randomQuote.source}, ${randomQuote.citation}, ${randomQuote.year}</strong>`;
 
-  if (randomQuote.year) {
-    html += `<span class="year">${randomQuote.year}</span>`;
-  }
   if (randomQuote.voice) {
-    html += `<span class="citation">Voice by : ${randomQuote.voice}, </span>`;
+    html += `<span class="citation"> Voice by : ${randomQuote.voice},</span>`;
   }
 
   if (randomQuote.episodes) {
     html += `<span> Seen in : ${randomQuote.episodes} episodes.</span>`;
   }
-  html += `</p></div></div>`;
-  document.getElementById("quote-box").innerHTML = html;
+  html += `</p></div>`;
+  const quoteBox = document.getElementById("quote-box");
+
+  quoteBox.innerHTML = html;
+  const wrapper = quoteBox.querySelector(".quote-wrapper");
+  wrapper.classList.remove("fade-in");
+  void wrapper.offsetWidth;
+  wrapper.classList.add("fade-in");
 }
 printQuote();
 
