@@ -133,16 +133,16 @@ function printQuote() {
 
   function colorQuote() {
     let sourceColor = {
-      Jinx: "linear-gradient(to right, #00BFFF, #FF4DA6)",
-      Silco: "linear-gradient(to right, #8B0000, #0A0A0A)",
-      Heimerdinger: "linear-gradient(to right, #FFD700, #87CEFA)",
-      Jayce: "linear-gradient(to right, #4169E1, #DAA520)",
-      Sevika: "linear-gradient(to right, #6E6E6E, #990000)",
-      Viktor: "linear-gradient(to right, #B87333, #3B6F82)",
-      Mel: "linear-gradient(to right, #FFD700, #800080)",
-      Ekko: "linear-gradient(to right, #00FFB3, #8B4513)",
-      Vi: "linear-gradient(to right, #C71585, #8B0000)",
-      Vander: "linear-gradient(to right, #4E342E, #5C1E1E)",
+      Jinx: "linear-gradient(to right, #3B808D, #C8617A)",
+      Silco: "linear-gradient(to right, #A56E45, #1A1A1D)",
+      Heimerdinger: "linear-gradient(to right, #97938F, #604D2E)",
+      Jayce: "linear-gradient(to right, #7F7348, #B9B295)",
+      Sevika: "linear-gradient(to right, #334539, #1A1A18)",
+      Viktor: "linear-gradient(to right, #E1D5C9, #060608)",
+      Mel: "linear-gradient(to right, #675C2C, #060608)",
+      Ekko: "linear-gradient(to right, #F6FFFD, #39403A)",
+      Vi: "linear-gradient(to right, #9860A0, #411629)",
+      Vander: "linear-gradient(to right, #41422E, #5C1E1E)",
     };
 
     if (sourceColor[randomQuote.source]) {
