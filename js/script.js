@@ -133,7 +133,7 @@ function printQuote() {
 
   function colorQuote() {
     let sourceColor = {
-      Jinx: "linear-gradient(to right, #00BFFF, #FF4DA695)",
+      Jinx: "linear-gradient(to right, #00BFFF, #FF4DA6)",
       Silco: "linear-gradient(to right, #8B0000, #0A0A0A)",
       Heimerdinger: "linear-gradient(to right, #FFD700, #87CEFA)",
       Jayce: "linear-gradient(to right, #4169E1, #DAA520)",
