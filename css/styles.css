@@ -12,7 +12,7 @@ body {
 header {
   display: flex;
   flex-direction: column;
-  align-items: center; /* ← ça centre tout à l’intérieur horizontalement */
+  align-items: center;
   width: 100%;
   margin: auto;
   padding: 20px 0;
@@ -42,7 +42,7 @@ h1 {
 @keyframes fadeInRight {
   from {
     opacity: 0;
-    transform: translateX(60px); /* décalé à droite */
+    transform: translateX(60px);
   }
   to {
     opacity: 1;
@@ -105,7 +105,8 @@ h1 {
 
 .quote-meta .citation,
 .quote-meta .year,
-.quote-meta .episodes {
+.quote-meta .episodes,
+.quote-meta .voice {
   font-style: italic;
   opacity: 0.85;
   margin: 0;

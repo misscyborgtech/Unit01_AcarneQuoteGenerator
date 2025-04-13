@@ -136,7 +136,7 @@ function printQuote() {
       Jinx: "linear-gradient(to right, #3B808D, #C8617A)",
       Silco: "linear-gradient(to right, #A56E45, #1A1A1D)",
       Heimerdinger: "linear-gradient(to right, #97938F, #604D2E)",
-      Jayce: "linear-gradient(to right, #7F7348, #B9B295)",
+      Jayce: "linear-gradient(to right, #B9B295, #7F7348)",
       Sevika: "linear-gradient(to right, #334539, #1A1A18)",
       Viktor: "linear-gradient(to right, #E1D5C9, #060608)",
       Mel: "linear-gradient(to right, #675C2C, #060608)",
@@ -163,7 +163,7 @@ function printQuote() {
         <strong>${randomQuote.source}, ${randomQuote.citation}, ${randomQuote.year}</strong>`;
 
   if (randomQuote.voice) {
-    html += `<span class="citation"> Voice by : ${randomQuote.voice},</span>`;
+    html += `<span class="voice"> Voice by : ${randomQuote.voice},</span>`;
   }
 
   if (randomQuote.episodes) {
