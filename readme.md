@@ -43,3 +43,14 @@ Instead of generating a random color, I took the liberty of assigning a **custom
 A `setInterval()` function calls `printQuote()` every **15 seconds** to keep the interface dynamic and fresh.
 
 ---
+
+## 🚀 Next Steps
+
+- Add validation to avoid generating the same quote twice
+- Add an ui element for the setInterval
+- Add validation that the setInterval restarts its timer when the user presses the
+
+---
+
+💬 **Feedback or suggestions?** Feel free to reach out via GitHub!  
+Thanks for stopping by 🖖
