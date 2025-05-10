@@ -1,46 +1,74 @@
-# 🌀 Arcane Quotes Generator
+# Project 1: Random Quote Generator – Arcane Edition
 
-This project is a random quote generator inspired by the **Arcane** series. It dynamically selects and displays a quote in the browser, with a custom visual style tailored to each character.
+## 🧾 Overview
 
-## 🚀 Features
+This project displays randomized quotes from the _Arcane_ universe with additional metadata, styled character images, and background color gradients that match the character’s personality.  
+It was created as part of the Treehouse Full Stack JavaScript Techdegree and demonstrates array manipulation, conditional rendering, DOM interaction, and timed updates using vanilla JavaScript.
 
-- Randomly displays quotes from the **Arcane** universe
-- Uses an array of objects containing metadata like source, year, voice actor, and number of episodes
-- Automatically refreshes with a new quote every 15 seconds
-- Background changes based on the quoted character
-- Button available to manually generate a new quote
+---
 
-## 🧠 Project Structure
+## 📦 Base Project Features (Required)
 
-### 1. `quotes[]`
+### ✅ Random Quote Generator
 
-An array of quote objects, each including:
+- A random quote displays each time the "Show another quote" button is clicked.
+- Each quote object includes a **quote**, **source**, and optionally a **citation** and **year**.
+- Quotes are stored in an array of objects and retrieved using `getRandomQuote()`.
 
-- `quote`: the quote text
-- `source`: the character who said it
-- `citation`: the season or work it comes from (optional)
-- `year`: the year it originated (optional)
-- `voice`: the voice actor (optional)
-- `episodes`: total number of episodes the character appears in (optional)
+### 🔧 Key Functions
 
-### 2. `getRandomQuote()`
+#### `getRandomQuote()`
 
-Returns a random quote object from the `quotes` array.
+- Returns a random quote object from the `quotes` array.
+- Uses `Math.floor()` and `Math.random()` to calculate a valid index.
 
-### 3. `printQuote()`
+#### `printQuote()`
 
-- Calls `getRandomQuote()`
-- Dynamically builds an HTML string with the quote's details
-- Injects the content into the `<div id="quote-box">`
-- Also calls `colorQuote()` to change the background based on the character
+- Builds and injects HTML with quote details into the DOM.
+- Handles conditional display of optional properties like citation and year.
 
-### 4. `colorQuote()`
+---
 
-Instead of generating a random color, I took the liberty of assigning a **custom gradient to each character**. This visually reinforces the unique personality of each Arcane figure.
+## 🌟 Extra Credit Features
 
-### 5. Auto-refresh
+> These enhancements go beyond the core functionality and aim for an "Exceeds Expectations" rating.
 
-A `setInterval()` function calls `printQuote()` every **15 seconds** to keep the interface dynamic and fresh.
+### 🎨 Character-Based Backgrounds
+
+- Each character’s quote triggers a **unique background gradient** that matches their aesthetic.
+- Implemented using a `colorQuote()` function and a lookup object keyed by `source`.
+
+### 🧠 Additional Properties in Quote Objects
+
+- Quote objects optionally include:
+  - `voice`: The actor who voices the character
+  - `episodes`: Number of episodes the character appears in
+  - `image`: A portrait displayed next to the quote
+- These are dynamically injected when present.
+
+### ⏱ Auto-Refreshing Quotes
+
+- Quotes update **automatically every 15 seconds** using `setInterval()`.
+- Ensures a fresh experience without user interaction.
+
+---
+
+## 🧠 Lessons Learned
+
+- How to organize and manipulate arrays of objects in JavaScript
+- Using DOM methods like `getElementById()` and `.innerHTML` for dynamic content
+- Writing conditional logic to selectively add HTML elements
+- Leveraging `setInterval()` to automate updates
+- How to keep CSS and JavaScript separated while achieving rich UI effects
+
+---
+
+## 📁 Files Structure
+
+- `index.html` – Static page structure
+- `css/styles.css` – Styling for layout and characters
+- `js/script.js` – Quote logic, DOM manipulation, and interactivity
+- `img/` – Character images for enhanced visual context
 
 ---
 
@@ -53,8 +81,3 @@ https://misscyborgtech.github.io/Unit01_AcarneQuotesGenerator/
 - Add validation to avoid generating the same quote twice
 - Add an ui element for the setInterval
 - Add validation that the setInterval restarts its timer when the user presses the
-
----
-
-💬 **Feedback or suggestions?** Feel free to reach out via GitHub!  
-Thanks for stopping by 🖖
